@@ -1,6 +1,10 @@
-const express=require('express')
-const app=express();
-app.use('/',(req,res)=>{
-    res.send('<h1>welcom deploy succes</h2>');
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
+app.get('/', (req, res) => {
+  res.send('Hello World!')
 })
-app.listen('3002');
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
